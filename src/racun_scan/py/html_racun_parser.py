@@ -67,7 +67,7 @@ def extract_invoice_table(tree, aria_label) :
             name=tablerow.find('td/strong[@data-bind="text: Name"]').text
         quantity=tablerow.find('td[@data-bind="decimalAsText: Quantity"]').text
         unit_price=tablerow.find('td[@data-bind="decimalAsText: UnitPrice"]').text
-        total_per_product=tablerow.find('td[@data-bind="decimalAsText: Total"]').text
+        total_per_product=tablerow.find('td[@data-bind="decimalAsText: Total"]').text.replace(".","")
 
         pos={"name" : name, "quantity": quantity, "unit_price": unit_price, "total_per_product": total_per_product }
         list_of_products.append(pos)
