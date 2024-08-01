@@ -1,0 +1,1703 @@
+<html lang="sr-Cyrl-RS"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Провера рачуна - TaxCore</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/animate.css/animate.min.css">
+    <link rel="stylesheet" href="/lib/bootstrap-datetimepicker/css/tempus-dominus.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/custom.css">
+
+    <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="/css/themes/default/custom.css">
+    
+    <link rel="stylesheet" href="/lib/toastr.js/toastr.min.css">
+
+    <style>
+        .form-group {
+            display: grid;
+        }
+
+        .col-form-label {
+            font-weight: bold;
+        }
+    </style>
+
+    
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/popper.js/umd/popper.min.js"></script>
+    <script src="/lib/jqueryui/jquery-ui.min.js"></script>
+    <script src="/lib/jquery.mask/jquery.mask.min.js"></script>
+    <script src="/lib/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/js/knockout-3.5.1.js"></script>
+    <script src="/js/invoice-verify.js"></script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            viewModel = new ViewModel();
+            ko.applyBindings(viewModel);
+            viewModel.InvoiceNumber('6FJJ4UGQ-6FJJ4UGQ-226246');
+            viewModel.Token('2ecd9abc-a281-451c-97c4-eeb0a1cb9330');
+
+viewModel.IsNormalOrAdvance(true); viewModel.IsNormalSale(true); 
+                });
+
+    </script>
+
+    <script type="text/javascript">
+        var rootPath = 'https://suf.purs.gov.rs';
+        var lang = 'sr-Cyrl-RS';
+        var dateTimePickerFormat = 'd.m.yyyy. HH:ii';
+        var showMeridianTime = true;
+    </script>
+</head>
+<body class="body-content">
+    <div class="container">
+        aaaa
+        <div class="m-t-md">
+            m-t-md
+            <div class="mr-1 ml-1 justify-content-between d-flex">
+                <a href="/" class="navbar-brand font-bold" style="background-color:inherit;color:black;padding-right: 5px;margin-right: 5px;display: flex;align-items: center;">
+                    <img src="/images/logo.png" width="40"> <span style="padding-left: 14px;">  Провера рачуна </span>
+                </a>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a id="languagesSelect" href="#" class="nav-link dropdown-toggle pb-1 pt-1" data-bs-toggle="dropdown"><img src="/images/Flags/sr-Cyrl-RS.png" alt="српски (ћирилица, Србија)" width="16"> српски (ћирилица, Србија)</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                                <a href="/Home/ChangeLanguage/en-US" class="dropdown-item "><img src="/images/Flags/en-US.png" alt="English (United States)" width="16"> English (United States)</a>
+                                <a href="/Home/ChangeLanguage/sr-Cyrl-RS" class="dropdown-item font-bold"><img src="/images/Flags/sr-Cyrl-RS.png" alt="српски (ћирилица, Србија)" width="16"> Српски (ћирилица, Србија)</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            
+<form action="/v" method="post">    <div class="row">
+        row1
+        <div class="col-lg-12  text-center">
+            col-lg-12
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <i class="glyphicon glyphicon-info-sign"></i>
+                    Статус рачуна
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                                <label class="h2" for="invoiceStatusLabel" id="invoiceStatusLabel" style="margin-top:10px">Рачун је проверен</label>
+                            <br> <img src="/images/Verification/Valid.png" width="100" height="100">
+
+
+                        </div>
+                        <div class="col-md-12">
+
+                                    <span style="padding: 10px 0px">
+                                        <text>
+                                            <b>
+                                                Упоредите време издавања и износ промета на овој страни и на Вашем рачуну. У случају неједнакости, <a target="_blank" href="/CustomerReport/6FJJ4UGQ-6FJJ4UGQ-226246">пријавите случај пореској управи.</a>                                            </b>
+                                        </text>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        row2
+        <div class="col-lg-6 col-md-6 text-center">
+            col-lg-6 col-md-6 text-center
+            <div class="panel panel-info">
+                panel-info in row 2
+                <div class="panel-heading">
+                    another row
+                    <i class="glyphicon glyphicon-arrow-right"></i>
+                    Захтев за фискализацију рачуна
+                </div>
+                <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-form-label">ПИБ</label>
+                            <div class="col-md-12">
+                                <span id="tinLabel">
+                                    109459122
+                                    <span>
+                            </span></span></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label">Име продајног места</label>
+                            <div class="col-md-12">
+                                <span id="shopFullNameLabel">1169756-PJ Cash Carry Plus</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Адреса</label>
+                            <div class="col-md-12">
+                                <span id="addressLabel">АУТОПУТ ЗА ЗАГРЕБ 18   </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Град</label>
+                            <div class="col-md-12">
+                                <span id="cityLabel">БЕОГРАД (ЗЕМУН)</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Општина</label>
+                            <div class="col-md-12">
+                                <span id="administrativeUnitLabel">Београд-Земун</span>
+                            </div>
+                        </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">ИД купца</label>
+                        <div class="col-md-12">
+                            <span id="buyerIdLabel">
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Затражио</label>
+                        <div class="col-md-12">
+                            <span id="requestedByLabel">
+                                6FJJ4UGQ
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="">Врста</label>
+                        <div class="col-md-12">
+                            <span id="invoiceTypeId">Промет</span>
+                            <span id="transactionTypeId">Продаја</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 text-center">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <i class="glyphicon glyphicon-arrow-left"></i>
+                    Резултат фискализације рачуна
+                </div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label class="col-form-label">Укупан износ</label>
+                        <div class="col-md-12">
+                            <span id="totalAmountLabel">
+                                12.747,31
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Бројач по врсти трансакције</label>
+                        <div class="col-md-12">
+                            <span id="transactionTypeCounterLabel">
+                                226206
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Бројач укупног броја</label>
+                        <div class="col-md-12">
+                            <span id="totalCounterLabel">
+                                226246
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Екстензија бројача рачуна</label>
+                        <div class="col-md-12">
+                            <span id="invoiceCounterExtensionLabel">
+                                ПП
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Затражио - Потписао - Бројач</label>
+                        <div class="col-md-12">
+                            <span id="invoiceNumberLabel">
+                                6FJJ4UGQ-6FJJ4UGQ-226246
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Потписао</label>
+                        <div class="col-md-12">
+                            <span id="signedByLabel">
+                                6FJJ4UGQ
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">ПФР време (временска зона сервера)</label>
+                        <div class="col-md-12">
+                            <span id="sdcDateTimeLabel">
+                                30.7.2024. 18:59:09
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+        <div class="row">
+            <div class="col-lg-12 text-center centered">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">
+                            <a data-bs-toggle="collapse" href="#collapse-specs" class="" aria-expanded="true"><i class="glyphicon glyphicon-align-justify"></i> Спецификација рачуна</a>
+                        </h5>
+                    </div>
+                    <div id="collapse-specs" class="panel-collapse in collapse show" style="">
+                        <div class="panel-body">
+                            <div class="table-responsive m-t">
+                                <table class="table invoice-table" aria-label="Invoice specification" data-bind="visible: !LoadingSpecifications()" style="">
+                                    <thead>
+                                        <tr>
+                                            <th style="min-height: 200px;">Назив</th>
+                                            <th>Количина</th>
+                                            <th>Јед. цена са ПДВ</th>
+                                            <th>Укупна цена</th>
+                                            <th>Основица</th>
+                                            <th>ПДВ</th>
+                                            <th>Стопа</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody><tbody data-bind="foreach: Specifications">
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">JAJA KONZUMNA "M" KLASA 30/1 PANIC TRADE (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">329,99</td>
+                                            <td data-bind="decimalAsText: Total">329,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">299,99</td>
+                                            <td data-bind="decimalAsText: VatAmount">30,00</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">HLEB FRANCUSKI MIKAN (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">66,99</td>
+                                            <td data-bind="decimalAsText: Total">66,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">60,90</td>
+                                            <td data-bind="decimalAsText: VatAmount">6,09</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">PAPRIKA SLATKA 50gr ALEVA  (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">149,99</td>
+                                            <td data-bind="decimalAsText: Total">149,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">124,99</td>
+                                            <td data-bind="decimalAsText: VatAmount">25,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">MAJCINA DUSICA 10gr UNAC BB (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">22,99</td>
+                                            <td data-bind="decimalAsText: Total">22,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">19,16</td>
+                                            <td data-bind="decimalAsText: VatAmount">3,83</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">LOVOROV LIST 10gr UNAC (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">2,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">26,99</td>
+                                            <td data-bind="decimalAsText: Total">53,98</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">44,98</td>
+                                            <td data-bind="decimalAsText: VatAmount">9,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">JOGURT GREKOS KAJSIJA 150gr MLEKARA SUBOTICA (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">2,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">84,99</td>
+                                            <td data-bind="decimalAsText: Total">169,98</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">154,53</td>
+                                            <td data-bind="decimalAsText: VatAmount">15,45</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">JOGURT GREKOS 150gr CASA (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">2,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">59,99</td>
+                                            <td data-bind="decimalAsText: Total">119,98</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">109,07</td>
+                                            <td data-bind="decimalAsText: VatAmount">10,91</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">JOGURT GREKOS JAGODA 150gr MLEKARA SUBOTICA (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">2,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">84,99</td>
+                                            <td data-bind="decimalAsText: Total">169,98</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">154,53</td>
+                                            <td data-bind="decimalAsText: VatAmount">15,45</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SIR PRONTO PARMIGIANO REGGIANO 125G 7370 DUCLA TRADING (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">479,99</td>
+                                            <td data-bind="decimalAsText: Total">479,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">399,99</td>
+                                            <td data-bind="decimalAsText: VatAmount">80,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SIR GOUDA KAMPER VAKUUM 250 GR (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">399,99</td>
+                                            <td data-bind="decimalAsText: Total">399,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">333,32</td>
+                                            <td data-bind="decimalAsText: VatAmount">66,67</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">NUDLE BIG LUNCH GOVEDINA 75gr (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">2,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">44,99</td>
+                                            <td data-bind="decimalAsText: Total">89,98</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">74,98</td>
+                                            <td data-bind="decimalAsText: VatAmount">15,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">7DAYS DOUBLE VANILLA&amp;SOUR CHERRY 60GR (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">2,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">69,99</td>
+                                            <td data-bind="decimalAsText: Total">139,98</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">116,65</td>
+                                            <td data-bind="decimalAsText: VatAmount">23,33</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">PRASAK ZA PECIVO 6+1GRATIS DR.OETKER (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">119,99</td>
+                                            <td data-bind="decimalAsText: Total">119,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">99,99</td>
+                                            <td data-bind="decimalAsText: VatAmount">20,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">NUDLE BIG LUNCH PILETINA 75gr (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">4,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">44,99</td>
+                                            <td data-bind="decimalAsText: Total">179,96</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">149,97</td>
+                                            <td data-bind="decimalAsText: VatAmount">29,99</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">CAJ KAMILICA 24/1 20% GRATIS FRUCTUS (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">54,99</td>
+                                            <td data-bind="decimalAsText: Total">54,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">45,82</td>
+                                            <td data-bind="decimalAsText: VatAmount">9,17</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">CAJ NARODNI 30gr WELTON (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">62,99</td>
+                                            <td data-bind="decimalAsText: Total">62,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">52,49</td>
+                                            <td data-bind="decimalAsText: VatAmount">10,50</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">BELI LUK (KG)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">0,17</td>
+                                            <td data-bind="decimalAsText: UnitPrice">499,99</td>
+                                            <td data-bind="decimalAsText: Total">85,00</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">77,27</td>
+                                            <td data-bind="decimalAsText: VatAmount">7,73</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">RUZMARIN 20gr UNAC BB (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">39,99</td>
+                                            <td data-bind="decimalAsText: Total">39,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">33,32</td>
+                                            <td data-bind="decimalAsText: VatAmount">6,67</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">MLADI KUPUS (KG)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,26</td>
+                                            <td data-bind="decimalAsText: UnitPrice">49,99</td>
+                                            <td data-bind="decimalAsText: Total">62,79</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">57,08</td>
+                                            <td data-bind="decimalAsText: VatAmount">5,71</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">CETKA ZA ZUBE PREMIER CLEAN COLGATE (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">2,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">119,99</td>
+                                            <td data-bind="decimalAsText: Total">239,98</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">199,98</td>
+                                            <td data-bind="decimalAsText: VatAmount">40,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">CAJ NARODNI PIRAMIDA KESICA 30gr HERBELLA (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">269,99</td>
+                                            <td data-bind="decimalAsText: Total">269,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">224,99</td>
+                                            <td data-bind="decimalAsText: VatAmount">45,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SVEZI KVASAC VRENJE 50gr (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">47,99</td>
+                                            <td data-bind="decimalAsText: Total">47,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">39,99</td>
+                                            <td data-bind="decimalAsText: VatAmount">8,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">BUJON GOVEDJI MAGGI 60gr 1104146 (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">94,99</td>
+                                            <td data-bind="decimalAsText: Total">94,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">79,16</td>
+                                            <td data-bind="decimalAsText: VatAmount">15,83</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SIR GORGONZOLA 48%mm 100gr (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">284,99</td>
+                                            <td data-bind="decimalAsText: Total">284,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">237,49</td>
+                                            <td data-bind="decimalAsText: VatAmount">47,50</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">MASLAC PRESIDENT 200G DUKAT (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">389,99</td>
+                                            <td data-bind="decimalAsText: Total">389,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">324,99</td>
+                                            <td data-bind="decimalAsText: VatAmount">65,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SIR SVEZI ELLA 400gr IMLEK (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">239,99</td>
+                                            <td data-bind="decimalAsText: Total">239,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">199,99</td>
+                                            <td data-bind="decimalAsText: VatAmount">40,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">MLADI KROMPIR BELI (KG)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">0,88</td>
+                                            <td data-bind="decimalAsText: UnitPrice">59,99</td>
+                                            <td data-bind="decimalAsText: Total">52,67</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">47,88</td>
+                                            <td data-bind="decimalAsText: VatAmount">4,79</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">VIRSLA DELIKATES 205gr CARNEX (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">159,99</td>
+                                            <td data-bind="decimalAsText: Total">159,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">133,32</td>
+                                            <td data-bind="decimalAsText: VatAmount">26,67</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">ZAMRZUTA MESAVINA ZA RUSKU SALATU 900gr (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">214,99</td>
+                                            <td data-bind="decimalAsText: Total">214,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">195,45</td>
+                                            <td data-bind="decimalAsText: VatAmount">19,54</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">COKOLADA BELA SCHOGETTEN 100gr (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">119,99</td>
+                                            <td data-bind="decimalAsText: Total">119,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">99,99</td>
+                                            <td data-bind="decimalAsText: VatAmount">20,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">MILERAM 400gr SABAC (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">216,99</td>
+                                            <td data-bind="decimalAsText: Total">216,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">180,82</td>
+                                            <td data-bind="decimalAsText: VatAmount">36,17</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">CRNI LUK (KG)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">0,56</td>
+                                            <td data-bind="decimalAsText: UnitPrice">59,99</td>
+                                            <td data-bind="decimalAsText: Total">33,83</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">30,75</td>
+                                            <td data-bind="decimalAsText: VatAmount">3,08</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">JUNECI BUT B/K (KG)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,33</td>
+                                            <td data-bind="decimalAsText: UnitPrice">1.099,99</td>
+                                            <td data-bind="decimalAsText: Total">1.462,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">1.329,99</td>
+                                            <td data-bind="decimalAsText: VatAmount">133,00</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">PANIRANI RIBLJI STAPICI 300gr FRIKOM (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">3,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">339,99</td>
+                                            <td data-bind="decimalAsText: Total">1.019,97</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">849,98</td>
+                                            <td data-bind="decimalAsText: VatAmount">169,99</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">MAJONEZ THOMY DOJPAK 280ml 1104223 (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">169,99</td>
+                                            <td data-bind="decimalAsText: Total">169,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">141,66</td>
+                                            <td data-bind="decimalAsText: VatAmount">28,33</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">BRASNO NAMENSKO T-500 1/1 DANUBIUS (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">52,99</td>
+                                            <td data-bind="decimalAsText: Total">52,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">48,17</td>
+                                            <td data-bind="decimalAsText: VatAmount">4,82</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SITAN SIR 400GR MLEKARA MUZA (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">214,99</td>
+                                            <td data-bind="decimalAsText: Total">214,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">179,16</td>
+                                            <td data-bind="decimalAsText: VatAmount">35,83</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SECER KRISTAL SUNOKO SWEET FAMILI 1/1 (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">108,99</td>
+                                            <td data-bind="decimalAsText: Total">108,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">99,08</td>
+                                            <td data-bind="decimalAsText: VatAmount">9,91</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">OMEKSIVAC LENOR FE CHERRY BLOSSOM 1.2L= 48 WASHES (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">449,99</td>
+                                            <td data-bind="decimalAsText: Total">449,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">374,99</td>
+                                            <td data-bind="decimalAsText: VatAmount">75,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">ULJE JESTIVO PVC 1/1 DIJAMANT  (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">148,99</td>
+                                            <td data-bind="decimalAsText: Total">148,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">135,45</td>
+                                            <td data-bind="decimalAsText: VatAmount">13,54</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">RISO PRONTO INDICA PARBOILED 1kg (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">289,99</td>
+                                            <td data-bind="decimalAsText: Total">289,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">263,63</td>
+                                            <td data-bind="decimalAsText: VatAmount">26,36</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">PAR.PASIRANI BRIK TOMATELLO 0.5l NECTAR (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">79,99</td>
+                                            <td data-bind="decimalAsText: Total">79,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">66,66</td>
+                                            <td data-bind="decimalAsText: VatAmount">13,33</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SANITAR BREF POWER AKTIV GEL OCEAN 700ML (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">189,99</td>
+                                            <td data-bind="decimalAsText: Total">189,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">158,32</td>
+                                            <td data-bind="decimalAsText: VatAmount">31,67</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">DET.ZA VES PERSIL REGULAR 100WL 7.5KG (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">1.999,99</td>
+                                            <td data-bind="decimalAsText: Total">1.999,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">1.666,66</td>
+                                            <td data-bind="decimalAsText: VatAmount">333,33</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SREDSTVO ZA OTPUSAVANJE SLIVNIKA I ODVODA CLENID 1L (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">279,99</td>
+                                            <td data-bind="decimalAsText: Total">279,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">233,32</td>
+                                            <td data-bind="decimalAsText: VatAmount">46,67</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">KEFIR 2.8% 1KG PET DR MILK  (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">149,99</td>
+                                            <td data-bind="decimalAsText: Total">149,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">136,35</td>
+                                            <td data-bind="decimalAsText: VatAmount">13,64</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">PECENICA DIMLJENA KAMPER 150GR ZLATIBORAC (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">229,99</td>
+                                            <td data-bind="decimalAsText: Total">229,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">191,66</td>
+                                            <td data-bind="decimalAsText: VatAmount">38,33</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">DIMLJENI VRAT KAMPER 150GR ZLATIBORAC (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">229,99</td>
+                                            <td data-bind="decimalAsText: Total">229,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">191,66</td>
+                                            <td data-bind="decimalAsText: VatAmount">38,33</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">JUNECE MESNATE KOSTI 30% MESA (KG)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,14</td>
+                                            <td data-bind="decimalAsText: UnitPrice">299,99</td>
+                                            <td data-bind="decimalAsText: Total">342,59</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">311,45</td>
+                                            <td data-bind="decimalAsText: VatAmount">31,14</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">MLEKO SVEZE VOLIM 1.45L DUKAT (KOM)</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">159,99</td>
+                                            <td data-bind="decimalAsText: Total">159,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">145,45</td>
+                                            <td data-bind="decimalAsText: VatAmount">14,54</td>
+                                            <td data-bind="text: Label">Е</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div data-bind="visible: LoadingSpecifications" class="sk-spinner sk-spinner-wave" style="display: none;">
+                                    <div class="sk-rect1"></div>
+                                    <div class="sk-rect2"></div>
+                                    <div class="sk-rect3"></div>
+                                    <div class="sk-rect4"></div>
+                                    <div class="sk-rect5"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-lg-12 text-center centered">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-bs-toggle="collapse" href="#collapse3" class="" aria-expanded="true"><i class="glyphicon glyphicon-list-alt"></i> Журнал</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse show" style="">
+                    <div class="panel-body">
+                            <pre style="font-family:monospace">============ ФИСКАЛНИ РАЧУН ============
+109459122
+CASH &amp; CARRY PLUS DOO KULA
+1169756-PJ Cash Carry Plus
+АУТОПУТ ЗА ЗАГРЕБ 18   
+Београд-Земун
+Касир:                  FILIPOVIC ZORICA
+ЕСИР број:                        45/2.0
+-------------ПРОМЕТ ПРОДАЈА-------------
+Артикли
+========================================
+Назив   Цена         Кол.         Укупно
+JAJA KONZUMNA "M" KLASA 30/1 PANIC TRADE
+ (KOM) (Е)                              
+       329,99          1          329,99
+HLEB FRANCUSKI MIKAN (KOM) (Е)          
+        66,99          1           66,99
+PAPRIKA SLATKA 50gr ALEVA  (KOM) (Ђ)    
+       149,99          1          149,99
+MAJCINA DUSICA 10gr UNAC BB (KOM) (Ђ)   
+        22,99          1           22,99
+LOVOROV LIST 10gr UNAC (KOM) (Ђ)        
+        26,99          2           53,98
+JOGURT GREKOS KAJSIJA 150gr MLEKARA SUBO
+TICA (KOM) (Е)                          
+        84,99          2          169,98
+JOGURT GREKOS 150gr CASA (KOM) (Е)      
+        59,99          2          119,98
+JOGURT GREKOS JAGODA 150gr MLEKARA SUBOT
+ICA (KOM) (Е)                           
+        84,99          2          169,98
+SIR PRONTO PARMIGIANO REGGIANO 125G 7370
+ DUCLA TRADING (KOM) (Ђ)                
+       479,99          1          479,99
+SIR GOUDA KAMPER VAKUUM 250 GR (KOM) (Ђ)
+       399,99          1          399,99
+NUDLE BIG LUNCH GOVEDINA 75gr (KOM) (Ђ) 
+        44,99          2           89,98
+7DAYS DOUBLE VANILLA&amp;SOUR CHERRY 60GR (K
+OM) (Ђ)                                 
+        69,99          2          139,98
+PRASAK ZA PECIVO 6+1GRATIS DR.OETKER (KO
+M) (Ђ)                                  
+       119,99          1          119,99
+NUDLE BIG LUNCH PILETINA 75gr (KOM) (Ђ) 
+        44,99          4          179,96
+CAJ KAMILICA 24/1 20% GRATIS FRUCTUS (KO
+M) (Ђ)                                  
+        54,99          1           54,99
+CAJ NARODNI 30gr WELTON (KOM) (Ђ)       
+        62,99          1           62,99
+BELI LUK (KG) (Е)                       
+       499,99      0,170           85,00
+RUZMARIN 20gr UNAC BB (KOM) (Ђ)         
+        39,99          1           39,99
+MLADI KUPUS (KG) (Е)                    
+        49,99      1,256           62,79
+CETKA ZA ZUBE PREMIER CLEAN COLGATE (KOM
+) (Ђ)                                   
+       119,99          2          239,98
+CAJ NARODNI PIRAMIDA KESICA 30gr HERBELL
+A (KOM) (Ђ)                             
+       269,99          1          269,99
+SVEZI KVASAC VRENJE 50gr (KOM) (Ђ)      
+        47,99          1           47,99
+BUJON GOVEDJI MAGGI 60gr 1104146 (KOM) (
+Ђ)                                      
+        94,99          1           94,99
+SIR GORGONZOLA 48%mm 100gr (KOM) (Ђ)    
+       284,99          1          284,99
+MASLAC PRESIDENT 200G DUKAT (KOM) (Ђ)   
+       389,99          1          389,99
+SIR SVEZI ELLA 400gr IMLEK (KOM) (Ђ)    
+       239,99          1          239,99
+MLADI KROMPIR BELI (KG) (Е)             
+        59,99      0,878           52,67
+VIRSLA DELIKATES 205gr CARNEX (KOM) (Ђ) 
+       159,99          1          159,99
+ZAMRZUTA MESAVINA ZA RUSKU SALATU 900gr 
+(KOM) (Е)                               
+       214,99          1          214,99
+COKOLADA BELA SCHOGETTEN 100gr (KOM) (Ђ)
+       119,99          1          119,99
+MILERAM 400gr SABAC (KOM) (Ђ)           
+       216,99          1          216,99
+CRNI LUK (KG) (Е)                       
+        59,99      0,564           33,83
+JUNECI BUT B/K (KG) (Е)                 
+     1.099,99      1,330        1.462,99
+PANIRANI RIBLJI STAPICI 300gr FRIKOM (KO
+M) (Ђ)                                  
+       339,99          3        1.019,97
+MAJONEZ THOMY DOJPAK 280ml 1104223 (KOM)
+ (Ђ)                                    
+       169,99          1          169,99
+BRASNO NAMENSKO T-500 1/1 DANUBIUS (KOM)
+ (Е)                                    
+        52,99          1           52,99
+SITAN SIR 400GR MLEKARA MUZA (KOM) (Ђ)  
+       214,99          1          214,99
+SECER KRISTAL SUNOKO SWEET FAMILI 1/1 (K
+OM) (Е)                                 
+       108,99          1          108,99
+OMEKSIVAC LENOR FE CHERRY BLOSSOM 1.2L= 
+48 WASHES (KOM) (Ђ)                     
+       449,99          1          449,99
+ULJE JESTIVO PVC 1/1 DIJAMANT  (KOM) (Е)
+       148,99          1          148,99
+RISO PRONTO INDICA PARBOILED 1kg (KOM) (
+Е)                                      
+       289,99          1          289,99
+PAR.PASIRANI BRIK TOMATELLO 0.5l NECTAR 
+(KOM) (Ђ)                               
+        79,99          1           79,99
+SANITAR BREF POWER AKTIV GEL OCEAN 700ML
+ (KOM) (Ђ)                              
+       189,99          1          189,99
+DET.ZA VES PERSIL REGULAR 100WL 7.5KG (K
+OM) (Ђ)                                 
+     1.999,99          1        1.999,99
+SREDSTVO ZA OTPUSAVANJE SLIVNIKA I ODVOD
+A CLENID 1L (KOM) (Ђ)                   
+       279,99          1          279,99
+KEFIR 2.8% 1KG PET DR MILK  (KOM) (Е)   
+       149,99          1          149,99
+PECENICA DIMLJENA KAMPER 150GR ZLATIBORA
+C (KOM) (Ђ)                             
+       229,99          1          229,99
+DIMLJENI VRAT KAMPER 150GR ZLATIBORAC (K
+OM) (Ђ)                                 
+       229,99          1          229,99
+JUNECE MESNATE KOSTI 30% MESA (KG) (Е)  
+       299,99      1,142          342,59
+MLEKO SVEZE VOLIM 1.45L DUKAT (KOM) (Е) 
+       159,99          1          159,99
+----------------------------------------
+Укупан износ:                  12.747,31
+Готовина:                      12.747,31
+========================================
+Ознака       Име      Стопа        Порез
+Е           П-ПДВ   10,00%        365,70
+Ђ           О-ПДВ   20,00%      1.454,10
+----------------------------------------
+Укупан износ пореза:            1.819,80
+========================================
+ПФР време:          30.07.2024. 18:59:09
+ПФР број рачуна: 6FJJ4UGQ-6FJJ4UGQ-22624
+6                                       
+Бројач рачуна:           226206/226246ПП
+========================================<br><img src="data:image/gif;base64,R0lGODlhhAGEAfcAAAAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCqmQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOqzDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YAAGYAM2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZVzGZV/2aAAGaAM2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbVM2bVZmbVmWbVzGbV/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkAzJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplVmZlVzJlV/5mAAJmAM5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnVzJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwrM8wrZswrmcwrzMwr/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyAzMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zVAMzVM8zVZszVmczVzMzV/8z/AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8rzP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+qZv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAAACH5BAEAAPwALAAAAACEAYQBAAj/AAEIHEiwoMGD+xIqXMiwocKDBRcSdLgP4sSHAyVaFEixI8aNFxuCjOixYsaPAEqa3KiRY8mQK1M6hNhSZkKaKmeeFLkzZ02YI4MKHerSJ8WRNY+CTIoSp9GmS3UKVQm0p1KWKKn2hPlzq1eDT5nyLBrWaUyiaNPaDNsVbFapFsWeRch2LtaxQbWS5QrXLF+8ctuureqW7d+Yde0OVsuYaGLBhNdC/rr4btmhV/O+pKw37luPkTOHhkr26eHDnSM3pmuY8+bCHZF+VowarmjMswPn3n3TKmmSvfeyZugXN97ilh2/rizZqFnTrkEPvw1b9fTl1DUHb749s3fbfYdb/y/9ezJs88yRa48d/fJ55+2zpxZP+Tn28FN5IwYPmD/xqN2Vh196AP6XXIHKSScceT7Z12B8A85XXX3XKcgdbQj6FmB/HBp4oWwbKibfbw5iuKBn24HI3omJqadedgnuFyJ0J55WoYnAeajijvQx6KGEzOk2I3yWodeZYHLxOOGBPq7Gon5HCnichjjamF+KPeZY25BTPsmljO6hqOONSWZppJQ4Clllhl6GiWSEA5YYo5JaUqnmmyFaeSGQepZY5pIEAjpenU06+eee92FZ6HuKioneoIPeCSWao3VIo6Mk2jnbi5nWSCGgj5KJJp5hVgpmi58Sut6lfZo56qapSv9qoanf5cmmqpw2quKIXSI6a3tb5gRpqn4u1yqor9rqaZusQtjhsMsGqmqojI65aI7NthlslLoSK+qv1+Yqon+RTgpukImCSSe06HZbJJy9oorsl5ee6S62ROJ776F68uussK5a6K+g3jKbb60rrgprtdSK2e/B+u2a75xUSmwpuWohzC6pdMr7oab3Ptwon8adau6PEReY7XrH6ouywJ1iqqy05e57MsKyrnktqTCWLDLABtvcWlpqWvxywg3/vDGlt3qMc5w31pwwY0WDfHTL20LN5MfvXvxsxhhHK3W9yeo8rX/2Wiuz2k9/3bW6FRfs67jntn00r3SbTK+xVmv0HDXYX2Id95VTDz730m5zTbPVxY6M9uPxMr1zXY0jXTbVKYf7N+F454z41Yan3Tm8d0POtuSKe5x14oJvbbfRMY6+98xy/vu57Kd7XXrkjgfet9aNHSr8wu3CrS2wyB+vfPGmNp88888PP7P0xkMvtpPYU+/88tpHT3z33H8v/vTjVw++9eiffz727HtP/vvml799+vK7Hz/886tff/j4289u+0TbH/36x7/7GTB/AtQfAQd4QP85sIDzy95jHsQ5yjEuVsALVu2ux7DyAcluaatcCEu2sgma0ISxs6CPBqY4o/GMeC70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" width="250" height="250">
+======== КРАЈ ФИСКАЛНОГ РАЧУНА =========</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-lg-12 text-center centered">
+                <button type="button" class="btn btn-success mb-1" onclick="OnPrintClicked();">Преглед за штампу</button>
+                <div style="display: none">
+                    
+<div id="PrintInvoice" class="panel-body" style="margin:0;">
+    <div style="margin:0;">
+        <div style="width:100%;overflow:hidden" class="row">
+            <div style="width:45%;float:left;">
+                <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>ПИБ:</strong>&nbsp;<span class="badge" style="background-color: #fff;">109459122</span></p>
+                <hr>
+                    <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>Предузеће:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;">CASH &amp; CARRY PLUS DOO KULA</span></p>
+                    <hr>
+                    <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>Место продаје:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;">PJ Cash Carry Plus</span></p>
+                    <hr>
+                    <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>Адреса:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;">АУТОПУТ ЗА ЗАГРЕБ 18   </span></p>
+                    <hr>
+                    <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>Општина:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;">Београд-Земун</span></p>
+                    <hr>
+                <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>Касир:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;">FILIPOVIC ZORICA</span></p>
+                <hr>
+                <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>ИД купца:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;"></span></p>
+                <hr>
+                <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>Опционо поље купца:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;"></span></p>
+                <hr>
+                <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>ЕСИР број:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;">45/2.0</span></p>
+                <hr>
+                <p style="border: none; text-align:left;margin:0px;padding:0px;">
+                    <strong>ЕСИР време:</strong>&nbsp;
+                </p>
+                <hr>
+            </div>
+            <div style="width:54%;float:right; align-content:flex-end;">
+                <div>
+                    <div style="width:100%;display: inline-block;">
+                        <div style="width:55%;float:left;text-align:left;">
+                            <br>
+                            <strong style="margin-bottom:0px;">
+                                Број рачуна:
+                            </strong>
+                                <h4 style="margin-top:0px;">6FJJ4UGQ-6FJJ4UGQ-226246</h4>
+
+                                <h4>ФИСКАЛНИ РАЧУН</h4>
+                        </div>
+                        <div style="width:45%;float:right">
+                            <br><img class="QR_img" alt="" src="data:image/gif;base64,R0lGODlhhAGEAfcAAAAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCqmQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOqzDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YAAGYAM2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZVzGZV/2aAAGaAM2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbVM2bVZmbVmWbVzGbV/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkAzJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplVmZlVzJlV/5mAAJmAM5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnVzJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwrM8wrZswrmcwrzMwr/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyAzMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zVAMzVM8zVZszVmczVzMzV/8z/AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8rzP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+qZv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAAACH5BAEAAPwALAAAAACEAYQBAAj/AAEIHEiwoMGD+xIqXMiwocKDBRcSdLgP4sSHAyVaFEixI8aNFxuCjOixYsaPAEqa3KiRY8mQK1M6hNhSZkKaKmeeFLkzZ02YI4MKHerSJ8WRNY+CTIoSp9GmS3UKVQm0p1KWKKn2hPlzq1eDT5nyLBrWaUyiaNPaDNsVbFapFsWeRch2LtaxQbWS5QrXLF+8ctuureqW7d+Yde0OVsuYaGLBhNdC/rr4btmhV/O+pKw37luPkTOHhkr26eHDnSM3pmuY8+bCHZF+VowarmjMswPn3n3TKmmSvfeyZugXN97ilh2/rizZqFnTrkEPvw1b9fTl1DUHb749s3fbfYdb/y/9ezJs88yRa48d/fJ55+2zpxZP+Tn28FN5IwYPmD/xqN2Vh196AP6XXIHKSScceT7Z12B8A85XXX3XKcgdbQj6FmB/HBp4oWwbKibfbw5iuKBn24HI3omJqadedgnuFyJ0J55WoYnAeajijvQx6KGEzOk2I3yWodeZYHLxOOGBPq7Gon5HCnichjjamF+KPeZY25BTPsmljO6hqOONSWZppJQ4Clllhl6GiWSEA5YYo5JaUqnmmyFaeSGQepZY5pIEAjpenU06+eee92FZ6HuKioneoIPeCSWao3VIo6Mk2jnbi5nWSCGgj5KJJp5hVgpmi58Sut6lfZo56qapSv9qoanf5cmmqpw2quKIXSI6a3tb5gRpqn4u1yqor9rqaZusQtjhsMsGqmqojI65aI7NthlslLoSK+qv1+Yqon+RTgpukImCSSe06HZbJJy9oorsl5ee6S62ROJ776F68uussK5a6K+g3jKbb60rrgprtdSK2e/B+u2a75xUSmwpuWohzC6pdMr7oab3Ptwon8adau6PEReY7XrH6ouywJ1iqqy05e57MsKyrnktqTCWLDLABtvcWlpqWvxywg3/vDGlt3qMc5w31pwwY0WDfHTL20LN5MfvXvxsxhhHK3W9yeo8rX/2Wiuz2k9/3bW6FRfs67jntn00r3SbTK+xVmv0HDXYX2Id95VTDz730m5zTbPVxY6M9uPxMr1zXY0jXTbVKYf7N+F454z41Yan3Tm8d0POtuSKe5x14oJvbbfRMY6+98xy/vu57Kd7XXrkjgfet9aNHSr8wu3CrS2wyB+vfPGmNp88888PP7P0xkMvtpPYU+/88tpHT3z33H8v/vTjVw++9eiffz727HtP/vvml799+vK7Hz/886tff/j4289u+0TbH/36x7/7GTB/AtQfAQd4QP85sIDzy95jHsQ5yjEuVsALVu2ux7DyAcluaatcCEu2sgma0ISxs6CPBqY4o/GMeC70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" width="169" height="169">
+                        </div>
+                    </div>
+                    <div style="width:100%;display: inline-block;">
+                        <hr>
+                        <table>
+                            <tbody>
+                                <tr>
+                                        <td><strong>За уплату:</strong></td>
+                                    <td style="padding-left: 20px;">12.747,31</td>
+                                </tr>
+                                 <tr data-bind="if: Specifications().length > 0">
+                                       <td><strong>Порез укупно:</strong></td>
+                                       <td style="padding-left:20px;" data-bind="decimalAsText: TotalTax">1.819,84</td>
+                                 </tr>
+                                    <tr>
+                                        <td><strong>Начин плаћања:</strong></td>
+                                        <td style="padding-left: 20px;">
+
+                                                <span>Готовина</span>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <td><strong>Врста рачуна:</strong></td>
+                                    <td style="padding-left:20px;">Промет Продаја</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Време на безбедносном елементу:</strong></td>
+                                    <td style="padding-left:20px;">30.7.2024. 18:59:09</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Бројач рачуна:</strong></td>
+                                    <td style="padding-left:20px;">226206/226246ПП</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <br>
+
+            <div style="width:100%;margin-top: 30px" data-bind="if: Specifications().length > 0">
+
+                <h3 style="text-align:left;padding-bottom:0;margin-bottom:0;">Спецификација рачуна</h3>
+                <hr style="margin-top:0;padding-top:0;">
+                <table style="width:100%;padding:0;">
+                    <thead style="font-size: 14px;">
+                        <tr>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:left;">Назив</th>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:right;">Количина</th>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:right;">Јед. цена са ПДВ</th>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:right;">Укупна цена</th>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:right;">Основица</th>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:right;">ПДВ</th>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:right;">Стопа</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 12px;" data-bind="foreach: Specifications">
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">JAJA KONZUMNA "M" KLASA 30/1 PANIC TRADE (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">329,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">329,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">299,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">30,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">HLEB FRANCUSKI MIKAN (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">66,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">66,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">60,90</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">6,09</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">PAPRIKA SLATKA 50gr ALEVA  (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">149,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">149,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">124,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">25,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">MAJCINA DUSICA 10gr UNAC BB (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">22,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">22,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">19,16</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">3,83</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">LOVOROV LIST 10gr UNAC (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">2,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">26,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">53,98</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">44,98</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">9,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">JOGURT GREKOS KAJSIJA 150gr MLEKARA SUBOTICA (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">2,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">84,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">169,98</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">154,53</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">15,45</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">JOGURT GREKOS 150gr CASA (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">2,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">59,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">119,98</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">109,07</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">10,91</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">JOGURT GREKOS JAGODA 150gr MLEKARA SUBOTICA (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">2,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">84,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">169,98</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">154,53</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">15,45</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SIR PRONTO PARMIGIANO REGGIANO 125G 7370 DUCLA TRADING (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">479,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">479,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">399,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">80,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SIR GOUDA KAMPER VAKUUM 250 GR (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">399,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">399,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">333,32</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">66,67</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">NUDLE BIG LUNCH GOVEDINA 75gr (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">2,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">44,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">89,98</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">74,98</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">15,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">7DAYS DOUBLE VANILLA&amp;SOUR CHERRY 60GR (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">2,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">69,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">139,98</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">116,65</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">23,33</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">PRASAK ZA PECIVO 6+1GRATIS DR.OETKER (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">119,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">119,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">99,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">20,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">NUDLE BIG LUNCH PILETINA 75gr (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">4,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">44,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">179,96</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">149,97</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">29,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">CAJ KAMILICA 24/1 20% GRATIS FRUCTUS (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">54,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">54,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">45,82</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">9,17</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">CAJ NARODNI 30gr WELTON (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">62,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">62,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">52,49</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">10,50</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">BELI LUK (KG)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">0,17</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">499,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">85,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">77,27</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">7,73</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">RUZMARIN 20gr UNAC BB (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">39,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">39,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">33,32</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">6,67</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">MLADI KUPUS (KG)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,26</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">49,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">62,79</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">57,08</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">5,71</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">CETKA ZA ZUBE PREMIER CLEAN COLGATE (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">2,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">119,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">239,98</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">199,98</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">40,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">CAJ NARODNI PIRAMIDA KESICA 30gr HERBELLA (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">269,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">269,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">224,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">45,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SVEZI KVASAC VRENJE 50gr (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">47,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">47,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">39,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">8,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">BUJON GOVEDJI MAGGI 60gr 1104146 (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">94,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">94,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">79,16</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">15,83</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SIR GORGONZOLA 48%mm 100gr (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">284,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">284,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">237,49</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">47,50</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">MASLAC PRESIDENT 200G DUKAT (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">389,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">389,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">324,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">65,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SIR SVEZI ELLA 400gr IMLEK (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">239,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">239,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">199,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">40,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">MLADI KROMPIR BELI (KG)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">0,88</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">59,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">52,67</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">47,88</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">4,79</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">VIRSLA DELIKATES 205gr CARNEX (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">159,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">159,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">133,32</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">26,67</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">ZAMRZUTA MESAVINA ZA RUSKU SALATU 900gr (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">214,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">214,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">195,45</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">19,54</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">COKOLADA BELA SCHOGETTEN 100gr (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">119,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">119,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">99,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">20,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">MILERAM 400gr SABAC (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">216,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">216,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">180,82</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">36,17</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">CRNI LUK (KG)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">0,56</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">59,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">33,83</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">30,75</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">3,08</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">JUNECI BUT B/K (KG)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,33</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">1.099,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">1.462,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">1.329,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">133,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">PANIRANI RIBLJI STAPICI 300gr FRIKOM (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">3,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">339,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">1.019,97</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">849,98</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">169,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">MAJONEZ THOMY DOJPAK 280ml 1104223 (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">169,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">169,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">141,66</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">28,33</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">BRASNO NAMENSKO T-500 1/1 DANUBIUS (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">52,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">52,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">48,17</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">4,82</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SITAN SIR 400GR MLEKARA MUZA (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">214,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">214,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">179,16</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">35,83</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SECER KRISTAL SUNOKO SWEET FAMILI 1/1 (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">108,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">108,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">99,08</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">9,91</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">OMEKSIVAC LENOR FE CHERRY BLOSSOM 1.2L= 48 WASHES (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">449,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">449,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">374,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">75,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">ULJE JESTIVO PVC 1/1 DIJAMANT  (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">148,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">148,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">135,45</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">13,54</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">RISO PRONTO INDICA PARBOILED 1kg (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">289,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">289,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">263,63</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">26,36</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">PAR.PASIRANI BRIK TOMATELLO 0.5l NECTAR (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">79,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">79,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">66,66</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">13,33</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SANITAR BREF POWER AKTIV GEL OCEAN 700ML (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">189,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">189,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">158,32</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">31,67</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">DET.ZA VES PERSIL REGULAR 100WL 7.5KG (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">1.999,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">1.999,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">1.666,66</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">333,33</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SREDSTVO ZA OTPUSAVANJE SLIVNIKA I ODVODA CLENID 1L (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">279,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">279,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">233,32</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">46,67</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">KEFIR 2.8% 1KG PET DR MILK  (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">149,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">149,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">136,35</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">13,64</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">PECENICA DIMLJENA KAMPER 150GR ZLATIBORAC (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">229,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">229,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">191,66</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">38,33</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">DIMLJENI VRAT KAMPER 150GR ZLATIBORAC (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">229,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">229,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">191,66</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">38,33</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">JUNECE MESNATE KOSTI 30% MESA (KG)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,14</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">299,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">342,59</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">311,45</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">31,14</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">MLEKO SVEZE VOLIM 1.45L DUKAT (KOM)</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">159,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">159,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">145,45</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">14,54</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Е</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center centered">
+                <a target="_blank" href="/CustomerReport/6FJJ4UGQ-6FJJ4UGQ-226246" class="btn btn-danger">       <i class="glyphicon glyphicon-flag"></i> Пријавите овај рачун</a>
+            </div>
+        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8Bc0lW7XdRdEk3gj--DyYW67TxfzRx_IPvJKI5ibj6vG8npBdn-JREcKHQZR1BpHbBg6b69z7eWrWO1Dl3CzOPJSJRZ9oNvJxwOLWSVAy_rtXMRyvmzfkg1lq--MWPrsXzh95Hwxor67_s2ue0AaZ14"></form>
+
+
+            <hr>
+            <footer>
+                <p class="text-center"><strong>Copyright</strong> <a href="https://www.dti.rs">Data Tech International</a> © 2012-2024 |  Верзија : 3.4.143.0</p>
+            </footer>
+        </div>
+    </div>
+
+
+</body></html>
