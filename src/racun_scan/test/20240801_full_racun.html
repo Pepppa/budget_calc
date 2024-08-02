@@ -1,0 +1,668 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Провера рачуна - TaxCore</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/animate.css/animate.min.css">
+    <link rel="stylesheet" href="/lib/bootstrap-datetimepicker/css/tempus-dominus.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/custom.css">
+
+    <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="/css/themes/default/custom.css">
+    
+    <link rel="stylesheet" href="/lib/toastr.js/toastr.min.css">
+
+    <style>
+        .form-group {
+            display: grid;
+        }
+
+        .col-form-label {
+            font-weight: bold;
+        }
+    </style>
+
+    
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/popper.js/umd/popper.min.js"></script>
+    <script src="/lib/jqueryui/jquery-ui.min.js"></script>
+    <script src="/lib/jquery.mask/jquery.mask.min.js"></script>
+    <script src="/lib/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/js/knockout-3.5.1.js"></script>
+    <script src="/js/invoice-verify.js"></script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            viewModel = new ViewModel();
+            ko.applyBindings(viewModel);
+            viewModel.InvoiceNumber('ADFP99RQ-ADFP99RQ-295407');
+            viewModel.Token('9966b8f6-a710-44ec-af09-517d283d9b6c');
+
+viewModel.IsNormalOrAdvance(true); viewModel.IsNormalSale(true); 
+                });
+
+    </script>
+
+    <script type="text/javascript">
+        var rootPath = 'https://suf.purs.gov.rs';
+        var lang = 'sr-Cyrl-RS';
+        var dateTimePickerFormat = 'd.m.yyyy. HH:ii';
+        var showMeridianTime = true;
+    </script>
+</head>
+<body class="body-content">
+    <div class="container">
+        <div class="m-t-md">
+            <div class="mr-1 ml-1 justify-content-between d-flex">
+                <a href="/" class="navbar-brand font-bold" style="background-color:inherit;color:black;padding-right: 5px;margin-right: 5px;display: flex;align-items: center;">
+                    <img src="/images/logo.png" width="40"> <span style="padding-left: 14px;">  Провера рачуна </span>
+                </a>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a id="languagesSelect" href="#" class="nav-link dropdown-toggle pb-1 pt-1" data-bs-toggle="dropdown"><img src="/images/Flags/sr-Cyrl-RS.png" alt="српски (ћирилица, Србија)" width="16"> српски (ћирилица, Србија)</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                                <a href="/Home/ChangeLanguage/en-US" class="dropdown-item "><img src="/images/Flags/en-US.png" alt="English (United States)" width="16"> English (United States)</a>
+                                <a href="/Home/ChangeLanguage/sr-Cyrl-RS" class="dropdown-item font-bold"><img src="/images/Flags/sr-Cyrl-RS.png" alt="српски (ћирилица, Србија)" width="16"> Српски (ћирилица, Србија)</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            
+<form action="/v" method="post">    <div class="row">
+        <div class="col-lg-12  text-center">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <i class="glyphicon glyphicon-info-sign"></i>
+                    Статус рачуна
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                                <label class="h2" for="invoiceStatusLabel" id="invoiceStatusLabel" style="margin-top:10px">Рачун је проверен</label>
+                            <br> <img src="/images/Verification/Valid.png" width="100" height="100">
+
+
+                        </div>
+                        <div class="col-md-12">
+
+                                    <span style="padding: 10px 0px">
+                                        <text>
+                                            <b>
+                                                Упоредите време издавања и износ промета на овој страни и на Вашем рачуну. У случају неједнакости, <a target="_blank" href="/CustomerReport/ADFP99RQ-ADFP99RQ-295407">пријавите случај пореској управи.</a>                                            </b>
+                                        </text>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 text-center">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <i class="glyphicon glyphicon-arrow-right"></i>
+                    Захтев за фискализацију рачуна
+                </div>
+                <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-form-label">ПИБ</label>
+                            <div class="col-md-12">
+                                <span id="tinLabel">
+                                    100065309
+                                    <span>
+                            </span></span></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label">Име продајног места</label>
+                            <div class="col-md-12">
+                                <span id="shopFullNameLabel">1027012-Veropoulos 1</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Адреса</label>
+                            <div class="col-md-12">
+                                <span id="addressLabel">МИЛУТИНА МИЛАНКОВИЋА 86А   </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Град</label>
+                            <div class="col-md-12">
+                                <span id="cityLabel">БЕОГРАД (НОВИ БЕОГРАД)</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Општина</label>
+                            <div class="col-md-12">
+                                <span id="administrativeUnitLabel">Београд-Нови Београд</span>
+                            </div>
+                        </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">ИД купца</label>
+                        <div class="col-md-12">
+                            <span id="buyerIdLabel">
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Затражио</label>
+                        <div class="col-md-12">
+                            <span id="requestedByLabel">
+                                ADFP99RQ
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="">Врста</label>
+                        <div class="col-md-12">
+                            <span id="invoiceTypeId">Промет</span>
+                            <span id="transactionTypeId">Продаја</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 text-center">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <i class="glyphicon glyphicon-arrow-left"></i>
+                    Резултат фискализације рачуна
+                </div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label class="col-form-label">Укупан износ</label>
+                        <div class="col-md-12">
+                            <span id="totalAmountLabel">
+                                2.150,92
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Бројач по врсти трансакције</label>
+                        <div class="col-md-12">
+                            <span id="transactionTypeCounterLabel">
+                                295213
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Бројач укупног броја</label>
+                        <div class="col-md-12">
+                            <span id="totalCounterLabel">
+                                295407
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Екстензија бројача рачуна</label>
+                        <div class="col-md-12">
+                            <span id="invoiceCounterExtensionLabel">
+                                ПП
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Затражио - Потписао - Бројач</label>
+                        <div class="col-md-12">
+                            <span id="invoiceNumberLabel">
+                                ADFP99RQ-ADFP99RQ-295407
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Потписао</label>
+                        <div class="col-md-12">
+                            <span id="signedByLabel">
+                                ADFP99RQ
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">ПФР време (временска зона сервера)</label>
+                        <div class="col-md-12">
+                            <span id="sdcDateTimeLabel">
+                                1.8.2024. 21:30:52
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+        <div class="row">
+            <div class="col-lg-12 text-center centered">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">
+                            <a data-bs-toggle="collapse" href="#collapse-specs" class="" aria-expanded="true"><i class="glyphicon glyphicon-align-justify"></i> Спецификација рачуна</a>
+                        </h5>
+                    </div>
+                    <div id="collapse-specs" class="panel-collapse in collapse show" style="">
+                        <div class="panel-body">
+                            <div class="table-responsive m-t">
+                                <table class="table invoice-table" aria-label="Invoice specification" data-bind="visible: !LoadingSpecifications()" style="">
+                                    <thead>
+                                        <tr>
+                                            <th style="min-height: 200px;">Назив</th>
+                                            <th>Количина</th>
+                                            <th>Јед. цена са ПДВ</th>
+                                            <th>Укупна цена</th>
+                                            <th>Основица</th>
+                                            <th>ПДВ</th>
+                                            <th>Стопа</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody><tbody data-bind="foreach: Specifications">
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">PAHULICE OVSENE 750GR DR.OETKER  [KOM]</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">279,99</td>
+                                            <td data-bind="decimalAsText: Total">279,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">233,32</td>
+                                            <td data-bind="decimalAsText: VatAmount">46,67</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">BIORAZGRADIVA KESA SUPER VERO  [KOM]</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">11,99</td>
+                                            <td data-bind="decimalAsText: Total">11,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">9,99</td>
+                                            <td data-bind="decimalAsText: VatAmount">2,00</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SLADOLED SNICKERS 6 X 45.6 GR MULTIPAK  [KOM]</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">574,99</td>
+                                            <td data-bind="decimalAsText: Total">574,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">479,16</td>
+                                            <td data-bind="decimalAsText: VatAmount">95,83</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SARMA DOMACA 400 GR CARNEX  [KOM]</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">469,99</td>
+                                            <td data-bind="decimalAsText: Total">469,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">391,66</td>
+                                            <td data-bind="decimalAsText: VatAmount">78,33</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SOK GAZIRANI REMIX SUPERIOR POMORANDZA 0.33L CAN KNJAZ MILOS  [KOM]</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">74,99</td>
+                                            <td data-bind="decimalAsText: Total">74,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">62,49</td>
+                                            <td data-bind="decimalAsText: VatAmount">12,50</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">SOS SOJA TAMARI BEZ GLUTENA PRIRODNO FERMENTISAN 250 ML KIKKOMAN  [KOM]</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">559,99</td>
+                                            <td data-bind="decimalAsText: Total">559,99</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">466,66</td>
+                                            <td data-bind="decimalAsText: VatAmount">93,33</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">ZVAKE ORBIT BUBBLE MINT PELLETS WRIGLEY  [KOM]</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">2,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">69,99</td>
+                                            <td data-bind="decimalAsText: Total">139,98</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">116,65</td>
+                                            <td data-bind="decimalAsText: VatAmount">23,33</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td>
+                                                <strong data-bind="text: Name">NALEPNICE 90/1  3,7x2,5  [KOM]</strong>
+                                            </td>
+                                            <td data-bind="decimalAsText: Quantity">1,00</td>
+                                            <td data-bind="decimalAsText: UnitPrice">39,00</td>
+                                            <td data-bind="decimalAsText: Total">39,00</td>
+                                            <td data-bind="decimalAsText: TaxBaseAmount">32,50</td>
+                                            <td data-bind="decimalAsText: VatAmount">6,50</td>
+                                            <td data-bind="text: Label">Ђ</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div data-bind="visible: LoadingSpecifications" class="sk-spinner sk-spinner-wave" style="display: none;">
+                                    <div class="sk-rect1"></div>
+                                    <div class="sk-rect2"></div>
+                                    <div class="sk-rect3"></div>
+                                    <div class="sk-rect4"></div>
+                                    <div class="sk-rect5"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-lg-12 text-center centered">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-bs-toggle="collapse" href="#collapse3"><i class="glyphicon glyphicon-list-alt"></i> Журнал</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                            <pre style="font-family:monospace">============ ФИСКАЛНИ РАЧУН ============
+100065309
+VEROPOULOS DOO BEOGRAD
+1027012-Veropoulos 1
+МИЛУТИНА МИЛАНКОВИЋА 86А   
+Београд-Нови Београд
+Касир:                    Cerovic Zorica
+ЕСИР број:                   431/2.0.0.2
+-------------ПРОМЕТ ПРОДАЈА-------------
+Артикли
+========================================
+Назив   Цена         Кол.         Укупно
+PAHULICE OVSENE 750GR DR.OETKER  [KOM] (
+Ђ)                                      
+       279,99          1          279,99
+BIORAZGRADIVA KESA SUPER VERO  [KOM] (Ђ)
+        11,99          1           11,99
+SLADOLED SNICKERS 6 X 45.6 GR MULTIPAK  
+[KOM] (Ђ)                               
+       574,99          1          574,99
+SARMA DOMACA 400 GR CARNEX  [KOM] (Ђ)   
+       469,99          1          469,99
+SOK GAZIRANI REMIX SUPERIOR POMORANDZA 0
+.33L CAN KNJAZ MILOS  [KOM] (Ђ)         
+        74,99          1           74,99
+SOS SOJA TAMARI BEZ GLUTENA PRIRODNO FER
+MENTISAN 250 ML KIKKOMAN  [KOM] (Ђ)     
+       559,99          1          559,99
+ZVAKE ORBIT BUBBLE MINT PELLETS WRIGLEY 
+ [KOM] (Ђ)                              
+        69,99          2          139,98
+NALEPNICE 90/1  3,7x2,5  [KOM] (Ђ)      
+        39,00          1           39,00
+----------------------------------------
+Укупан износ:                   2.150,92
+Платна картица:                 2.150,92
+========================================
+Ознака       Име      Стопа        Порез
+Ђ           О-ПДВ   20,00%        358,49
+----------------------------------------
+Укупан износ пореза:              358,49
+========================================
+ПФР време:          01.08.2024. 21:30:52
+ПФР број рачуна: ADFP99RQ-ADFP99RQ-29540
+7                                       
+Бројач рачуна:           295213/295407ПП
+========================================<br><img src="data:image/gif;base64,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" width="250" height="250">
+======== КРАЈ ФИСКАЛНОГ РАЧУНА =========</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-lg-12 text-center centered">
+                <button type="button" class="btn btn-success mb-1" onclick="OnPrintClicked();">Преглед за штампу</button>
+                <div style="display: none">
+                    
+<div id="PrintInvoice" class="panel-body" style="margin:0;">
+    <div style="margin:0;">
+        <div style="width:100%;overflow:hidden" class="row">
+            <div style="width:45%;float:left;">
+                <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>ПИБ:</strong>&nbsp;<span class="badge" style="background-color: #fff;">100065309</span></p>
+                <hr>
+                    <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>Предузеће:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;">VEROPOULOS DOO BEOGRAD</span></p>
+                    <hr>
+                    <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>Место продаје:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;">Veropoulos 1</span></p>
+                    <hr>
+                    <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>Адреса:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;">МИЛУТИНА МИЛАНКОВИЋА 86А   </span></p>
+                    <hr>
+                    <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>Општина:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;">Београд-Нови Београд</span></p>
+                    <hr>
+                <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>Касир:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;"></span></p>
+                <hr>
+                <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>ИД купца:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;"></span></p>
+                <hr>
+                <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>Опционо поље купца:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;"></span></p>
+                <hr>
+                <p style="border: none; text-align:left;margin:0px;padding:0px;"><strong>ЕСИР број:</strong>&nbsp;<span class="badge" style="background-color: #fff;white-space: pre-wrap;line-height: 1.3; line-break: anywhere;"></span></p>
+                <hr>
+                <p style="border: none; text-align:left;margin:0px;padding:0px;">
+                    <strong>ЕСИР време:</strong>&nbsp;
+                </p>
+                <hr>
+            </div>
+            <div style="width:54%;float:right; align-content:flex-end;">
+                <div>
+                    <div style="width:100%;display: inline-block;">
+                        <div style="width:55%;float:left;text-align:left;">
+                            <br>
+                            <strong style="margin-bottom:0px;">
+                                Број рачуна:
+                            </strong>
+                                <h4 style="margin-top:0px;">ADFP99RQ-ADFP99RQ-295407</h4>
+
+                                <h4>ФИСКАЛНИ РАЧУН</h4>
+                        </div>
+                        <div style="width:45%;float:right">
+                            <br><img class="QR_img" alt="" src="data:image/gif;base64,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" width="169" height="169">
+                        </div>
+                    </div>
+                    <div style="width:100%;display: inline-block;">
+                        <hr>
+                        <table>
+                            <tbody>
+                                <tr>
+                                        <td><strong>За уплату:</strong></td>
+                                    <td style="padding-left: 20px;">2.150,92</td>
+                                </tr>
+                                 <tr data-bind="if: Specifications().length > 0">
+                                       <td><strong>Порез укупно:</strong></td>
+                                       <td style="padding-left:20px;" data-bind="decimalAsText: TotalTax">358,49</td>
+                                 </tr>
+                                    <tr>
+                                        <td><strong>Начин плаћања:</strong></td>
+                                        <td style="padding-left: 20px;">
+
+                                                <span>Платна картица</span>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <td><strong>Врста рачуна:</strong></td>
+                                    <td style="padding-left:20px;">Промет Продаја</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Време на безбедносном елементу:</strong></td>
+                                    <td style="padding-left:20px;">1.8.2024. 21:30:52</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Бројач рачуна:</strong></td>
+                                    <td style="padding-left:20px;">295213/295407ПП</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <br>
+
+            <div style="width:100%;margin-top: 30px" data-bind="if: Specifications().length > 0">
+
+                <h3 style="text-align:left;padding-bottom:0;margin-bottom:0;">Спецификација рачуна</h3>
+                <hr style="margin-top:0;padding-top:0;">
+                <table style="width:100%;padding:0;">
+                    <thead style="font-size: 14px;">
+                        <tr>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:left;">Назив</th>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:right;">Количина</th>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:right;">Јед. цена са ПДВ</th>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:right;">Укупна цена</th>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:right;">Основица</th>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:right;">ПДВ</th>
+                            <th scope="col" style="border-bottom:solid DarkGray 1px;text-align:right;">Стопа</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 12px;" data-bind="foreach: Specifications">
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">PAHULICE OVSENE 750GR DR.OETKER  [KOM]</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">279,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">279,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">233,32</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">46,67</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">BIORAZGRADIVA KESA SUPER VERO  [KOM]</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">11,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">11,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">9,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">2,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SLADOLED SNICKERS 6 X 45.6 GR MULTIPAK  [KOM]</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">574,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">574,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">479,16</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">95,83</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SARMA DOMACA 400 GR CARNEX  [KOM]</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">469,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">469,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">391,66</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">78,33</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SOK GAZIRANI REMIX SUPERIOR POMORANDZA 0.33L CAN KNJAZ MILOS  [KOM]</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">74,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">74,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">62,49</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">12,50</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">SOS SOJA TAMARI BEZ GLUTENA PRIRODNO FERMENTISAN 250 ML KIKKOMAN  [KOM]</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">559,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">559,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">466,66</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">93,33</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">ZVAKE ORBIT BUBBLE MINT PELLETS WRIGLEY  [KOM]</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">2,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">69,99</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">139,98</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">116,65</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">23,33</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: left;" data-bind="text: Name">NALEPNICE 90/1  3,7x2,5  [KOM]</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Quantity">1,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: UnitPrice">39,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: Total">39,00</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: TaxBaseAmount">32,50</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="decimalAsText: VatAmount">6,50</td>
+                            <td style="border-bottom: solid DarkGray 1px; text-align: right;" data-bind="text: Label">Ђ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center centered">
+                <a target="_blank" href="/CustomerReport/ADFP99RQ-ADFP99RQ-295407" class="btn btn-danger">       <i class="glyphicon glyphicon-flag"></i> Пријавите овај рачун</a>
+            </div>
+        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8B8BhQuAa-FBrWvUVeHQ-e3xYwKYBgRdzso3VBZLVA_oInuqC60y9xHXJvRA696dvh1Zx-8spoi8n0qHV3vBPZUAAqaQ8Y7UsYfOlK0DUstxwVwQNgfJg4V3_-g1SAY_E9i9jCVZqjqxMCYY4YTlFxY"></form>
+
+
+            <hr>
+            <footer>
+                <p class="text-center"><strong>Copyright</strong> <a href="https://www.dti.rs">Data Tech International</a> © 2012-2024 |  Верзија : 3.4.143.0</p>
+            </footer>
+        </div>
+    </div>
+
+
+</body>

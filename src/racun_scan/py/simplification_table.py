@@ -34,9 +34,16 @@ simplificator = {
 "Кефир": ["kefir"],
 "Мясные деликатесы": ["pecenica dimljena", "dimljeni vrat"],
 "Кости на суп": ["junece mesnate kosti"],
-"Молоко": ["mleko"]
+"Молоко": ["mleko"],
+"Овсяные хлопья": ["pahulice ovsene"],
+"Пакет": ["biorazgradiva kesa"],
+"Мороженое": ["sladoled"],
+"Готовая еда на обед": ["sarma"],
+"Газировка": ["sok gazirani"],
+"Соевый соус": ["sos soja"],
+"Жевательная резинка": ["zvake"]
 
- }
+}
 
 
 def simplify_name_by_table(original) :
