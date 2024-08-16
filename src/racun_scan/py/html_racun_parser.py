@@ -93,7 +93,10 @@ def get_table(tree) :
 
 def simplify_name(original_name):
     normalized_name=original_name.lower()
-    return simplify_name_by_table(normalized_name)
+    (result, name_to_return) = simplify_name_by_table(normalized_name)
+    if result == "not found" :
+        print ("Not found position: ", normalized_name)
+    return name_to_return
 
 
 def construct_importable_table(billing_table, name_of_store, date) :

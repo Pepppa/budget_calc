@@ -2,7 +2,7 @@ simplificator = {
 "Яйца": ["jaja"],
 "Хлеб": ["hleb"],
 "Приправы": ["paprika slatka", "majcina dusica", "lovorov list", "ruzmarin", "bujon govedji"],
-"Йогурт в баночке": ["jogurt grekos"],
+"Йогурт в баночке": ["jogurt grekos", "dukatos jogurt"],
 "Сыр": ["sir"],
 "Макароны": ["nudle"],
 "Круассаны": ["7days"],
@@ -14,11 +14,11 @@ simplificator = {
 "Дрожжи": ["svezi kvasac"],
 "Масло": ["maslac"],
 "Картошка": ["krompir"],
-"Сосиски": ["virsla"],
+"Сосиски": ["virsla", "pileci hot dog"],
 "Овощная заморозка": ["zamrzuta mesavina za rusku salatu"],
 "Шоколад": ["cokolada"],
 "Сметана": ["mileram"],
-"Лук": ["crni luk"],
+"Лук": ["crni luk", "luk mladi", "luk crni"],
 "Говядина": ["juneci but"],
 "Рыбные палочки": ["riblji stapici"],
 "Майонез": ["majonez"],
@@ -32,16 +32,20 @@ simplificator = {
 "Стиральный порошок": ["persil"],
 "Средство для прочистки труб": ["za otpusavanje slivnika"],
 "Кефир": ["kefir"],
-"Мясные деликатесы": ["pecenica dimljena", "dimljeni vrat"],
+"Мясные деликатесы": ["pecenica dimljena", "dimljeni vrat", "slanina"],
 "Кости на суп": ["junece mesnate kosti"],
 "Молоко": ["mleko"],
-"Овсяные хлопья": ["pahulice ovsene"],
-"Пакет": ["biorazgradiva kesa"],
+"Овсяные хлопья": ["pahulice ovsene", "ovsene pahuljice"],
+"Пакет": ["biorazgradiva kesa", "kesa velika"],
 "Мороженое": ["sladoled"],
 "Готовая еда на обед": ["sarma"],
-"Газировка": ["sok gazirani"],
+"Газировка": ["sok gazirani","aloe vera"],
 "Соевый соус": ["sos soja"],
-"Жевательная резинка": ["zvake"]
+"Жевательная резинка": ["zvake"],
+"Минеральная вода":["knjaz milos"],
+"Туалетная бумага":["perfex comfort"],
+"Огурцы":["krastavac"],
+"Лимонная кислота":["limuntus"]
 
 }
 
@@ -50,5 +54,5 @@ def simplify_name_by_table(original) :
     for simple_cat in simplificator :
         for var in simplificator[simple_cat] :
             if original.find(var) != -1 :
-                return simple_cat
-    return original
+                return ("found", simple_cat)
+    return ("not found", original)
