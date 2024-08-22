@@ -1,6 +1,8 @@
 simplificator = {
 "Аксессуары для волос": ["snalica"],
+"Ананас": ["ananas svez"],
 "Бреф": ["bref"],
+"Варенье малиновое": ["slatko malina"],
 "Газировка": ["sok gazirani","aloe vera", "fanta"],
 "Говядина": ["juneci but"],
 "Готовая еда на обед": ["sarma"],
@@ -24,14 +26,16 @@ simplificator = {
 "Масло": ["maslac"],
 "Минеральная вода":["knjaz milos"],
 "Молоко": ["mleko"],
-"Мороженое": ["sladoled"],
+"Молочный десерт": ["puding"],
+"Морковь": ["sargarepa"],
+"Мороженое": ["sladoled", "slad.delhaize", "slad.ducale"],
 "Мука": ["brasno"],
-"Мясные деликатесы": ["pecenica dimljena", "dimljeni vrat", "slanina"],
+"Мясные деликатесы": ["pecenica dimljena", "dimljeni vrat", "slanina", "dim.svinj.spic reb"],
 "Овощная заморозка": ["zamrzuta mesavina za rusku salatu"],
 "Овсяные хлопья": ["pahulice ovsene", "ovsene pahuljice"],
 "Огурцы":["krastavac"],
 "Отбеливатель": ["maramice za blistavo beli ves", "izbeljivac", "za izbeljivanje rublja"],
-"Пакет": ["biorazgradiva kesa", "kesa velika", "kesa za zamrzivac"],
+"Пакет": ["biorazgradiva kesa", "kesa velika", "kesa za zamrzivac", "kesa tregerica"],
 "Подсолнечное масло": ["ulje"],
 "Приправы": ["paprika slatka", "majcina dusica", "lovorov list", "ruzmarin", "bujon govedji"],
 "Пиво": ["pivo"],
@@ -58,8 +62,6 @@ simplificator = {
 "Яйца": ["jaja"]
 
 }
-
-
 
 def simplify_name_by_table(original) :
     for simple_cat in simplificator :
