@@ -3,6 +3,7 @@ simplificator = {
 "Ананас": ["ananas svez"],
 "Бреф": ["bref"],
 "Валерьянка": ["valeriana"],
+"Ванилин": ["vanil secer"],
 "Варенье малиновое": ["slatko malina"],
 "Витамины": ["magnezijum", "omega3"],
 "Газировка": ["sok gazirani","aloe vera", "fanta"],
@@ -20,10 +21,11 @@ simplificator = {
 "Колбаса": ["mortadella", "salama"],
 "Кондиционер для стирки": ["lenor"],
 "Кокос": ["kokos napitak"],
+"Конфеты": ["haribo"],
 "Кости на суп": ["junece mesnate kosti"],
 "Кофе растворимый": ["nescafe"],
 "Круассаны": ["7days"],
-"Курица":["pile "],
+"Курица":["pile ", "pileca krila"],
 "Лимонная кислота":["limuntus"],
 "Лук": ["crni luk", "luk mladi", "luk crni"],
 "Майонез": ["majonez"],
@@ -43,18 +45,21 @@ simplificator = {
 "Огурцы":["krastavac"],
 "Отбеливатель": ["maramice za blistavo beli ves", "izbeljivac", "za izbeljivanje rublja", "dr.beck.eliminator", "lovac na boje"],
 "Пакет": ["biorazgradiva kesa", "kesa velika", "kesa za zamrzivac", "kesa tregerica", "kese ap kom", "kesa trgovacka", "dm pap. kesa recik"],
+"Персики": ["breskva domaca"],
 "Подсолнечное масло": ["ulje"],
-"Приправы": ["paprika slatka", "majcina dusica", "lovorov list", "ruzmarin", "bujon govedji"],
+"Приправы": ["paprika slatka", "majcina dusica", "lovor", "ruzmarin", "bujon govedji", "crni bib"],
 "Пиво": ["pivo", "staropramen", "lowenbrau", "somersby"],
-"Разрыхлитель для теста": ["prasak za pecivo"],
+"Разрыхлитель для теста": ["prasak za pec"],
 "Рис": ["riso pronto"],
 "Рулет": ["rolat jumbo roll"],
 "Рыбные палочки": ["riblji stapici"],
 "Сахар": ["secer kristal", "secer u prahu"],
 "Свинина": ["svinjski but", "svinjski vrat bk"],
+"Сироп": ["deser.preliv"],
 "Сливки": ["pavlaka za slag"],
 "Сметана": ["mileram"],
 "Соевый соус": ["sos soja"],
+"Соль": ["so mors"],
 "Сосиски": ["virsla", "pileci hot dog"],
 "Средство для прочистки труб": ["za otpusavanje slivnika"],
 "Средство для укладки": ["taft"],
@@ -72,6 +77,7 @@ simplificator = {
 "Яйца": ["jaja"]
 
 }
+
 
 def simplify_name_by_table(original) :
     for simple_cat in simplificator :
