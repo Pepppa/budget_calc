@@ -9,6 +9,7 @@ simplificator = {
 "Газировка": ["sok gazirani","aloe vera", "fanta"],
 "Говядина": ["juneci but"],
 "Готовая еда на обед": ["sarma"],
+"Груши": ["kruska"],
 "Дрожжи": ["svezi kvasac"],
 "Жевательная резинка": ["zvake", "orbit"],
 "Желатин": ["zelatin"],
@@ -49,7 +50,8 @@ simplificator = {
 "Пакет": ["biorazgradiva kesa", "kesa velika", "kesa za zamrzivac", "kesa tregerica", "kese ap kom", "kesa trgovacka", "dm pap. kesa recik"],
 "Персики": ["breskva domaca"],
 "Подсолнечное масло": ["ulje"],
-"Приправы": ["paprika slatka", "majcina dusica", "lovor", "ruzmarin", "bujon govedji", "crni bib"],
+"Приправы": ["paprika slatka", "majcina dusica", "lovor", "ruzmarin", "bujon govedji", "crni bib", "govedja kocka"],
+"Протеиновый коктейль":["protein vanila zott", "protein sejk", "shake vanila"],
 "Пиво": ["pivo", "staropramen", "lowenbrau", "somersby"],
 "Разрыхлитель для теста": ["prasak za pec"],
 "Расходники для кухни": ["papir za pecenje"],
@@ -80,7 +82,6 @@ simplificator = {
 "Яйца": ["jaja"]
 
 }
-
 
 def simplify_name_by_table(original) :
     for simple_cat in simplificator :
