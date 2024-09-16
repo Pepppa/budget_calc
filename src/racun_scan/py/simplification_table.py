@@ -80,14 +80,13 @@ simplificator = {
 "Хлеб": ["hleb"],
 "Чай": ["caj"],
 "Чеснок": ["beli luk"],
-"Чипсы": ["cips", "doritos"],
+"Чипсы": ["cips", "doritos", "chips"],
 "Чистящее средство": ["cif"],
-"Шоколад": ["cokolada", "bar mars", "kinder", "bar snickers"],
+"Шоколад": ["cokolada", "mars", "kinder", "snickers", "bounty", "kit kat"],
 "Яблоки": ["jabuka crveni delises"],
 "Яйца": ["jaja"]
 
 }
-
 
 
 def simplify_name_by_table(original) :
