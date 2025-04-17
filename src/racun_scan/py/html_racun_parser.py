@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from lxml import html
 import urllib.request
-from simplification_table import simplify_name_by_table
 
 store_data_panel_heading='Захтев за фискализацију рачуна'
 resultig_data_panel_heading='Резултат фискализације рачуна'
@@ -11,8 +10,6 @@ name_of_store_label='Име продајног места'
 total_amount_label='Укупан износ'
 date_and_time_label='ПФР време (временска зона сервера)'
 bill_table_aria_label='Invoice specification'
-
-
 
 def get_store_data_element(tree) :
     for row in tree.xpath('//html/body/div[@class="container"]/div/form/div[@class="row"]') :
@@ -58,7 +55,7 @@ def get_specific_table_class(tree, aria_label) :
                 return table_class
 
 
-def extract_invoice_table(tree, aria_label) :
+def extract_invoice_table(tree, aria_label, name_of_store, date, total_amount) :
     table_class=get_specific_table_class(tree, aria_label)
     list_of_products = []
     for tablerow in table_class.findall('tbody/tr') :
@@ -70,7 +67,7 @@ def extract_invoice_table(tree, aria_label) :
         quantity=tablerow.find('td[@data-bind="decimalAsText: Quantity"]').text
         unit_price=tablerow.find('td[@data-bind="decimalAsText: UnitPrice"]').text
         total_per_product=tablerow.find('td[@data-bind="decimalAsText: Total"]').text.replace(".","")
-        pos={"name" : name, "quantity": quantity, "unit_price": unit_price, "total_per_product": total_per_product }
+        pos={"name" : name, "quantity": quantity, "unit_price": unit_price, "total_per_product": total_per_product, "date": date, "name_of_store": name_of_store, "comment": "Total amount in racun: " + total_amount }
         list_of_products.append(pos)
     return list_of_products
 
@@ -88,29 +85,8 @@ def get_date(tree) :
     (date, time)=date_and_time.split()
     return date
 
-def get_table(tree) :
-    return extract_invoice_table(tree, bill_table_aria_label)
-
-def simplify_name(original_name):
-    normalized_name=original_name.lower()
-    (result, name_to_return) = simplify_name_by_table(normalized_name)
-    if result == "not found" :
-        print ("Not found position: ", normalized_name)
-    return name_to_return
-
-
-def construct_importable_table(billing_table, name_of_store, date) :
-    resulting = ""
-    for record in billing_table :
-        original_name=record["name"]
-        name=simplify_name(original_name)
-        quantity=record["quantity"]
-        unit_price=record["unit_price"]
-        total_per_product=record["total_per_product"]
-        # Дата	Место	Источник	Позиция	Расход	Валюта расхода	Комментарий
-        line= date + ";" + name_of_store + ";" + ";" + name + ";" + total_per_product + ";" + "RSD" + ";" + original_name + ". " + quantity + " units per " + unit_price + ". \n"
-        resulting = resulting + line
-    return resulting
+def get_table(tree, name_of_store, date, total_amount) :
+    return extract_invoice_table(tree, bill_table_aria_label, name_of_store, date, total_amount)
 
 def retrieve_html_from_file(filename) :
     with open(filename, 'r') as file:
@@ -124,7 +100,7 @@ def retrieve_html_from_url(url) :
     fp.close()
     return mystr
 
-def extract_all_positions_as_table(data) :
+def extract_all_positions_as_dict(data) :
 
     tree = html.fromstring(data)
 
@@ -137,8 +113,8 @@ def extract_all_positions_as_table(data) :
     date=get_date(tree)
     print("Date", date)
 
-    billing_table=get_table(tree)
-    for_print = construct_importable_table(billing_table, name_of_store, date)
+    billing_table=get_table(tree, name_of_store, date, total_amount)
 
-    return for_print
+    return billing_table
+
 

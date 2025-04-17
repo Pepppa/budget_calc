@@ -4,7 +4,7 @@ dir=$(dirname $0)
 mainpy=${dir}/../py/main.py
 
 test1 () {
-    python3 $mainpy --file ${dir}/20240730_full_racun.html
+    python3 $mainpy --htmlfile ${dir}/20240730_full_racun.html
 }
 
 test2 () {
@@ -12,4 +12,8 @@ test2 () {
 
 }
 
-test1
+test3 () {
+    python3 $mainpy --csvfile ${dir}/mani_app_racuni.csv
+}
+
+test3
